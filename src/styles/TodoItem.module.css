@@ -1,0 +1,24 @@
+.todoItem {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0;
+  padding: 1rem 3rem;
+  font-size: 2rem;
+  font-weight: 300;
+  color: #737373;
+  border-bottom: 1px solid #c5c5c572;
+}
+
+.deleteBtn {
+  display: none;
+  color: rgb(202, 102, 102);
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.todoItem:hover .deleteBtn {
+  display: block;
+}
