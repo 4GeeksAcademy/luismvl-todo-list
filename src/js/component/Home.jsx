@@ -64,7 +64,7 @@ const Home = () => {
       .finally(() => setIsLoading(false))
   }
 
-  const handleDeleteUser = () => {
+  const deleteCurrentUser = () => {
     setIsLoading(true)
     deleteUser(currentUser).then(() => {
       setCurrentUser('')
@@ -129,7 +129,7 @@ const Home = () => {
           todos={todos}
           user={currentUser}
           loadTodos={loadTodos}
-          handleDeleteUser={handleDeleteUser}
+          deleteCurrentUser={deleteCurrentUser}
         />
       }
     </div>

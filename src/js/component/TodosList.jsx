@@ -4,17 +4,16 @@ import TodoItem from './TodoItem.jsx'
 
 import { updateTodos } from '../utils'
 
-const TodosList = ({ todos, user, loadTodos, handleDeleteUser }) => {
+const TodosList = ({ todos, user, loadTodos, deleteCurrentUser }) => {
   const [newTodoText, setNewTodoText] = useState('')
 
   const addTodo = (e) => {
     if (!user) return
     if (e.key === 'Enter' && e.target !== '') {
       const newTodo = { label: newTodoText.trim(), done: false }
-      updateTodos(user, [...todos, newTodo]).then(() => {
-        setNewTodoText('')
-        loadTodos()
-      })
+      updateTodos(user, [...todos, newTodo])
+        .then(() => setNewTodoText(''))
+        .finally(() => loadTodos())
     }
   }
 
@@ -23,12 +22,12 @@ const TodosList = ({ todos, user, loadTodos, handleDeleteUser }) => {
       const answer = confirm(
         'This action will delete the user if there are no todos. Are you sure you want to continue?'
       )
-      if (answer) handleDeleteUser()
+      if (answer) deleteCurrentUser()
     } else
       updateTodos(
         user,
         todos.filter((todo) => todo.id !== id)
-      ).then(() => loadTodos())
+      ).finally(() => loadTodos())
   }
 
   const toggleDone = (id) => {
@@ -38,7 +37,7 @@ const TodosList = ({ todos, user, loadTodos, handleDeleteUser }) => {
         if (todo.id === id) todo.done = !todo.done
         return todo
       })
-    ).then(() => loadTodos())
+    ).finally(() => loadTodos())
   }
 
   const handleInputChange = (e) => {
