@@ -14,7 +14,6 @@ const Home = () => {
   const [isLoading, setIsLoading] = useState(false)
   const [showMenu, setShowMenu] = useState(true)
 
-  // El parámetro 'current' indica si cargar los todos de currentUser
   const loadTodos = async (useCurrentUser = true, forceCreateUSer = false) => {
     if (!currentUser || !inputUser) return
     setIsLoading(true)
