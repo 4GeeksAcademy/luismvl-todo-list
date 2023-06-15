@@ -1,12 +1,12 @@
 .todoItem {
-  display: flex;
-  justify-content: space-between;
   margin: 0;
   padding: 1rem 3rem;
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 300;
   color: #737373;
   border-bottom: 1px solid #c5c5c572;
+  position: relative;
+  list-style: none;
 }
 
 .todoItem span {
@@ -14,18 +14,48 @@
   overflow-wrap: break-word;
 }
 
-.deleteBtn {
-  position: relative;
-  display: block;
-  opacity: 0;
-  color: rgb(202, 102, 102);
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  right: -0.9rem;
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  align-items: center;
+  position: absolute;
+  right: 0.8rem;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
-.todoItem:hover .deleteBtn {
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  background: none;
+  border: none;
+  /* font-size: 1rem; */
+  cursor: pointer;
+  background-color: #00000042;
+  border-radius: 50%;
+  width: 1.7rem;
+  height: 1.7rem;
+}
+
+.todoItem:hover .button {
   opacity: 1;
+}
+
+.undoneBtn {
+  color: rgb(202, 102, 102);
+}
+
+.doneBtn {
+  color: rgb(102, 202, 105);
+}
+
+.removeBtn {
+  color: rgba(75, 75, 75, 0.74);
+}
+
+.done {
+  text-decoration: line-through;
 }

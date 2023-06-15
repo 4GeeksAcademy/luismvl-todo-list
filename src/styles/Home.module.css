@@ -1,7 +1,81 @@
 .container {
-  padding: 4rem;
+  padding: 5rem 4rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
+}
+
+@media (max-width: 700px) {
+  .container {
+    padding: 2rem;
+    gap: 0;
+  }
+}
+
+.menu {
+  display: flex;
+  align-items: flex-start;
+  position: fixed;
+  gap: 1rem;
+  font-size: 1.2rem;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+  font-weight: bold;
+  color: #454545;
+  background-color: #71717117;
+}
+
+.menu form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.menu input {
+  width: 10rem;
+  border: none;
+  outline: none;
+  text-align: center;
+  color: #5b5b5b;
+  letter-spacing: 1px;
+  font-size: 1rem;
+  padding: 0.1rem 0.5rem;
+  background: none;
+  font-weight: 400;
+  border-bottom: 1px solid #6f6f6f;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 1rem;
+}
+
+.button.toggleMenuBtn {
+  display: block;
+  font-size: 1.2rem;
+  background: none;
+}
+
+.toggleMenuBtn:hover {
+  background: #8a8a8a3f;
+}
+
+.button {
+  background: #8a8a8a40;
+  border: none;
+  transition: 0.3s;
+  padding: 0.5rem;
+  width: fit-content;
+  color: #737373;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #8a8a8a7b;
+}
+
+.button.danger {
+  color: rgb(202, 102, 102);
 }

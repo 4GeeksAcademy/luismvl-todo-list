@@ -2,8 +2,13 @@
   background-color: #fff;
   position: relative;
   box-shadow: 0px 2px 4px 1px #0000002e;
-  min-width: 640px;
+  width: 640px;
   max-width: calc(100vw - 8rem);
+}
+@media (max-width: 700px) {
+  .container {
+    max-width: calc(100vw - 4rem);
+  }
 }
 
 .container,
@@ -38,7 +43,7 @@
 
 .input {
   padding: 1rem 3rem;
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 300;
   color: #737373;
   border: none;
@@ -63,7 +68,7 @@
   list-style: none;
   margin: 0;
   padding: 1rem 3rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 300;
   color: #a0a0a0;
   border-bottom: 1px solid #c5c5c572;
