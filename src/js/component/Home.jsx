@@ -57,14 +57,14 @@ const Home = () => {
     setIsLoading(false)
   }
 
-  const handleLoadButton = (e) => {
+  const handleLoad = (e) => {
     e.preventDefault()
     loadTodos(false)
       .then(() => setCurrentUser(inputUser))
       .finally(() => setIsLoading(false))
   }
 
-  const handleDeleteUserButton = () => {
+  const handleDeleteUser = () => {
     setIsLoading(true)
     deleteUser(currentUser).then(() => {
       setCurrentUser('')
@@ -84,7 +84,7 @@ const Home = () => {
     <div className={styles.container}>
       <div className={styles.menu}>
         {showMenu && (
-          <form onSubmit={handleLoadButton} action=''>
+          <form onSubmit={handleLoad} action=''>
             <label>
               user:
               <input
@@ -99,14 +99,14 @@ const Home = () => {
               <button
                 className={styles.button}
                 type='submit'
-                onClick={handleLoadButton}
+                onClick={handleLoad}
               >
                 load
               </button>
               <button
                 type='button'
                 className={`${styles.button} ${styles.danger}`}
-                onClick={handleDeleteUserButton}
+                onClick={handleDeleteUser}
               >
                 delete user
               </button>
@@ -129,7 +129,7 @@ const Home = () => {
           todos={todos}
           user={currentUser}
           loadTodos={loadTodos}
-          deleteUser={handleDeleteUserButton}
+          handleDeleteUser={handleDeleteUser}
         />
       }
     </div>

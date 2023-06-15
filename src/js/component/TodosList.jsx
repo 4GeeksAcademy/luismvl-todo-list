@@ -4,7 +4,7 @@ import TodoItem from './TodoItem.jsx'
 
 import { updateTodos } from '../utils'
 
-const TodosList = ({ todos, user, loadTodos, deleteUser }) => {
+const TodosList = ({ todos, user, loadTodos, handleDeleteUser }) => {
   const [newTodoText, setNewTodoText] = useState('')
 
   const addTodo = (e) => {
@@ -23,7 +23,7 @@ const TodosList = ({ todos, user, loadTodos, deleteUser }) => {
       const answer = confirm(
         'This action will delete the user if there are no todos. Are you sure you want to continue?'
       )
-      if (answer) deleteUser()
+      if (answer) handleDeleteUser()
     } else
       updateTodos(
         user,
