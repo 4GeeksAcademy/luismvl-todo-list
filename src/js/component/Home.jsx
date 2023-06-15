@@ -15,7 +15,7 @@ const Home = () => {
   const [showMenu, setShowMenu] = useState(true)
 
   // El parámetro 'current' indica si cargar los todos de currentUser
-  const loadTodos = async (useCurrentUser = true, firstLoad = false) => {
+  const loadTodos = async (useCurrentUser = true, forceCreateUSer = false) => {
     if (!currentUser || !inputUser) return
     setIsLoading(true)
     try {
@@ -36,7 +36,7 @@ const Home = () => {
       // si es no, resetea el valor de entrada (input) al valor anterior
       if (error.httpStatus === 404) {
         // TODO: Crear componente de notificación (?)
-        if (firstLoad) {
+        if (forceCreateUSer) {
           createUser(inputUser).then(() => {
             setCurrentUser(inputUser)
             loadTodos(false)
