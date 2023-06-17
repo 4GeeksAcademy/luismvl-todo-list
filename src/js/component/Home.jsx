@@ -19,10 +19,9 @@ const Home = () => {
     setIsLoading(true)
     try {
       const todos = await getTodos(useCurrentUser ? currentUser : inputUser)
-      // Agrega un ID para que sea más fácil manipular los todos
       setTodos(
         todos
-          .map((todo) => ({ ...todo, id: uuidv4() }))
+          .map((todo) => ({ ...todo, id: uuidv4() })) // Agrega un ID para que sea más fácil manipular los todos
           .toSorted((todo1, todo2) => {
             if (todo1.done && !todo2.done) return 1 // todo1 va antes que todo2
             if (!todo1.done && todo2.done) return -1 // todo2 va antes que todo1
