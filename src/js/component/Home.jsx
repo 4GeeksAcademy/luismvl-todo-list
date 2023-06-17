@@ -105,7 +105,7 @@ const Home = () => {
               <button
                 type='button'
                 className={`${styles.button} ${styles.danger}`}
-                onClick={handleDeleteUser}
+                onClick={deleteCurrentUser}
               >
                 delete user
               </button>
