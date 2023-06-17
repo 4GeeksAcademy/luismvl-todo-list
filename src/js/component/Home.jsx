@@ -32,7 +32,7 @@ const Home = () => {
     } catch (error) {
       // Si el usuario no existe, preguntar si desea crearlo
       // si es sí, se crea el usuario y luego se obtienen las tareas pendientes de ese usuario
-      // si es no, resetea el valor de entrada (input) al valor anterior
+      // si es no, resetea el input al valor anterior
       if (error.httpStatus === 404) {
         // TODO: Crear componente de notificación (?)
         if (forceCreateUSer) {
